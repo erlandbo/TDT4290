@@ -1,5 +1,5 @@
 # TDT4290
-TDT4290 Kundestyrt prosjekt (2022 HØST)
+TDT4290 Customer Driven Project  (2022 Fall)
 
 Acoustic-based vehicle dimension measurement
 
