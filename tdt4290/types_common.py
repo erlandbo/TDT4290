@@ -1,6 +1,8 @@
 from typing import TypedDict
 
 
+# This type is currently not being used,
+# but described the data in the pandas DataFrame
 class LidarData(TypedDict):
     enter_date: str
     enter_time: str

@@ -1,9 +1,5 @@
 from io import StringIO
-from typing import List
-
 import pandas as pd
-
-from types_common import LidarData
 
 
 def _load_lidar_data_as_string(filename: str):
@@ -12,7 +8,7 @@ def _load_lidar_data_as_string(filename: str):
     return text_lidar_data
 
 
-def _parse_lidar_data(lidar_data_string: str) -> List[LidarData]:
+def _parse_lidar_data(lidar_data_string: str) -> pd.DataFrame:
     raw_lidar_data = pd.read_csv(
         StringIO(lidar_data_string),
         sep=" ",
@@ -39,9 +35,9 @@ def _parse_lidar_data(lidar_data_string: str) -> List[LidarData]:
     )
     lidar_data["width"] = lidar_data["y1"] - lidar_data["y0"]
     # return lidar_data[lidar_data[5] == "mldcs.VehicleDetector[0]"].to_dict()
-    return lidar_data[::2].to_dict("records")
+    return lidar_data[::2]  # .to_dict("records")
 
 
-def parse_lidar_data(filename: str) -> List[LidarData]:
+def parse_lidar_data(filename: str) -> pd.DataFrame:  # is a List[LidarData]
     text_lidar_data = _load_lidar_data_as_string(filename)
     return _parse_lidar_data(text_lidar_data)
