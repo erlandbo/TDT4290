@@ -2,3 +2,6 @@ data/detections-device-1-3.csv
 .idea
 .vscode
 data/audio_13092022.WAV
+cornell_birdcall/fold0
+cornell_birdcall/birdcall-pannsatt-aux-weak
+cornell_birdcall/pannscnn14-decisionlevelatt-weight
