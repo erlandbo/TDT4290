@@ -12,3 +12,8 @@ class LidarData(TypedDict):
     y1: int  # in cm
     height: int  # in cm
     width: int  # in cm
+
+
+class LidarLabeledAudio(TypedDict):
+    audio_sample: list
+    lidar_data: LidarData
