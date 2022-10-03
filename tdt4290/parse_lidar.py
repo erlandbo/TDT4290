@@ -38,9 +38,7 @@ def _parse_lidar_data(lidar_data_string: str) -> pd.DataFrame:
     return lidar_data[::2]  # .to_dict("records")
 
 
-def _add_features_to_lidar(
-    raw_lidar_data: pd.DataFrame, start_time: pd.Timestamp
-) -> pd.DataFrame:
+def _add_features_to_lidar(raw_lidar_data: pd.DataFrame) -> pd.DataFrame:
     """Adds features to raw_lidar_data.
 
     Args:
@@ -60,14 +58,14 @@ def _add_features_to_lidar(
     lidar_data["datetime_leave"] = pd.to_datetime(
         lidar_data["leave_date"] + " " + lidar_data["leave_time"]
     )
-    lidar_data["seconds_enter"] = (
-        pd.to_datetime(lidar_data["enter_date"] + " " + lidar_data["enter_time"])
-        - start_time
-    ).dt.total_seconds()
-    lidar_data["seconds_leave"] = (
-        pd.to_datetime(lidar_data["leave_date"] + " " + lidar_data["leave_time"])
-        - start_time
-    ).dt.total_seconds()
+    # lidar_data["seconds_enter"] = (
+    #     pd.to_datetime(lidar_data["enter_date"] + " " + lidar_data["enter_time"])
+    #     - start_time
+    # ).dt.total_seconds()
+    # lidar_data["seconds_leave"] = (
+    #     pd.to_datetime(lidar_data["leave_date"] + " " + lidar_data["leave_time"])
+    #     - start_time
+    # ).dt.total_seconds()
     lidar_data.drop(
         ["enter_date", "enter_time", "leave_date", "leave_time"],
         axis=1,
@@ -80,9 +78,7 @@ def _add_features_to_lidar(
     return lidar_data
 
 
-def parse_lidar_data(
-    filename: str, start_time: pd.Timestamp
-) -> pd.DataFrame:  # is a List[LidarData]
+def parse_lidar_data(filename: str) -> pd.DataFrame:  # is a List[LidarData]
     text_lidar_data = _load_lidar_data_as_string(filename)
     raw_lidar_data = _parse_lidar_data(text_lidar_data)
-    return _add_features_to_lidar(raw_lidar_data, start_time)
+    return _add_features_to_lidar(raw_lidar_data)

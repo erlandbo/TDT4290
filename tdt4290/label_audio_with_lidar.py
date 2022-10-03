@@ -1,6 +1,5 @@
 from typing import List
 
-import librosa
 import pandas as pd
 
 from .parse_lidar import parse_lidar_data
@@ -8,22 +7,28 @@ from .types_common import LidarLabeledAudio
 
 
 def label_audio_with_lidar(
-    audio_filename: str,
     lidar_filename: str,
-    audio_start: pd.Timestamp = pd.to_datetime("2022-09-22 10:00:02.334612"),
+    audio_start: pd.Timestamp,  # = pd.to_datetime("2022-09-22 10:05:10.0000"),
+    audio_sample_rate: int = 32000,
 ) -> List[LidarLabeledAudio]:
-    print("Parsing lidar data...")
-    lidar = parse_lidar_data(lidar_filename, audio_start)
-    print("Done parsing lidar data")
-    print("Start loading audio...")
-    sound, sample_rate = librosa.load(audio_filename)
-    lidar_labeled_audio: List[LidarLabeledAudio] = []
-    for i, row in lidar.iterrows():
-        enter = int(row["seconds_enter"] * sample_rate)
-        leave = int(row["seconds_leave"] * sample_rate)
-        item: LidarLabeledAudio = {
-            "lidar_data": row.to_dict().__str__(),
-            "audio_sample": sound[leave:enter].tolist(),  # sound[enter:leave],
-        }
-        lidar_labeled_audio.append(item)
-    return lidar_labeled_audio
+    lidar: pd.DataFrame = parse_lidar_data(lidar_filename)
+    # audio_sample_start_list: List[int] = []
+    # audio_sample_end_list: List[int] = []
+    # for _, row in lidar.iterrows():
+    #     enter: pd.Timedelta = row["datetime_enter"] - audio_start
+    #     leave: pd.Timedelta = row["datetime_leave"] - audio_start
+    #     if enter < first_car_enter_audio_time or (
+    #         audio_end is not None and leave > audio_end
+    #     ):
+    #         audio_sample_start_list.append(-1)
+    #         audio_sample_end_list.append(-1)
+    #     audio_sample_start_list.append(enter.total_seconds() * audio_sample_rate)
+    #     audio_sample_end_list.append(leave.total_seconds() * audio_sample_rate)
+    lidar["audio_start_index"] = (
+        lidar["datetime_enter"] - audio_start
+    ).dt.total_seconds() * audio_sample_rate
+    lidar["audio_end_index"] = (
+        lidar["datetime_leave"] - audio_start
+    ).dt.total_seconds() * audio_sample_rate
+
+    return lidar
