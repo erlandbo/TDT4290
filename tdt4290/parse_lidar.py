@@ -1,6 +1,7 @@
 from io import StringIO
-
 import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 
 def _load_lidar_data_as_string(filename: str):
@@ -19,7 +20,8 @@ def _parse_lidar_data(lidar_data_string: str) -> pd.DataFrame:
         header=None,
     )
 
-    lidar_data = raw_lidar_data.filter([27, 28, 29, 30, 35, 39, 40])
+    lidar_data = raw_lidar_data[raw_lidar_data[5] == "mldcs.VehicleDetector[0]"]
+    lidar_data = lidar_data.filter([27, 28, 29, 30, 35, 39, 40])
     lidar_data.rename(
         columns=(
             {
@@ -34,8 +36,7 @@ def _parse_lidar_data(lidar_data_string: str) -> pd.DataFrame:
         ),
         inplace=True,
     )
-    # return lidar_data[lidar_data[5] == "mldcs.VehicleDetector[0]"].to_dict()
-    return lidar_data[::2]  # .to_dict("records")
+    return lidar_data
 
 
 def _add_features_to_lidar(raw_lidar_data: pd.DataFrame) -> pd.DataFrame:
@@ -51,30 +52,22 @@ def _add_features_to_lidar(raw_lidar_data: pd.DataFrame) -> pd.DataFrame:
     """
     # date_format = "&y-&m-&d %H:%M:%S"
     lidar_data = raw_lidar_data.copy()
+    lidar_data["width"] = lidar_data["y1"] - lidar_data["y0"]
+    lidar_data["front_area"] = lidar_data["width"] * lidar_data["height"]
     lidar_data["datetime_enter"] = pd.to_datetime(
         lidar_data["enter_date"] + " " + lidar_data["enter_time"]
     )
-
     lidar_data["datetime_leave"] = pd.to_datetime(
         lidar_data["leave_date"] + " " + lidar_data["leave_time"]
     )
-    # lidar_data["seconds_enter"] = (
-    #     pd.to_datetime(lidar_data["enter_date"] + " " + lidar_data["enter_time"])
-    #     - start_time
-    # ).dt.total_seconds()
-    # lidar_data["seconds_leave"] = (
-    #     pd.to_datetime(lidar_data["leave_date"] + " " + lidar_data["leave_time"])
-    #     - start_time
-    # ).dt.total_seconds()
     lidar_data.drop(
         ["enter_date", "enter_time", "leave_date", "leave_time"],
         axis=1,
         inplace=True,
     )
     lidar_data["width"] = lidar_data["y1"] - lidar_data["y0"]
-    lidar_data = lidar_data[::2]
     lidar_data["duration"] = lidar_data["datetime_leave"] - lidar_data["datetime_enter"]
-    lidar_data["front_area"] = lidar_data["width"] * lidar_data["height"]
+    lidar_data["duration"] = lidar_data.duration.dt.total_seconds()
     return lidar_data
 
 
