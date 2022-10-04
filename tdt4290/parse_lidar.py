@@ -1,27 +1,31 @@
 from io import StringIO
+
 import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
 
 
 def _load_lidar_data_as_string(filename: str):
     with open(filename, "r", encoding="ISO-8859-1") as f:
-        text_lidar_data = f.read().strip('\\"')
+        text_lidar_data = (
+            f.read().replace('\\"', "").replace('"', "").replace("  ", " ")
+        )
     return text_lidar_data
 
 
-def _parse_lidar_data(lidar_data_string: str) -> pd.DataFrame:
+def _parse_lidar_data(lidar_data_string: str, column_count: int) -> pd.DataFrame:
     raw_lidar_data = pd.read_csv(
         StringIO(lidar_data_string),
         sep=" ",
         engine="python",
         quoting=3,
-        on_bad_lines="skip",  # TODO: Handle this
+        on_bad_lines="warn",  # TODO: Handle this
+        names=[i for i in range(column_count + 1)],
         header=None,
     )
 
     lidar_data = raw_lidar_data[raw_lidar_data[5] == "mldcs.VehicleDetector[0]"]
-    lidar_data = lidar_data.filter([27, 28, 29, 30, 35, 39, 40])
+    # lidar_data = raw_lidar_data
+    # print("print", lidar_data)
+    lidar_data = lidar_data.filter([27, 28, 29, 30, 34, 38, 39])
     lidar_data.rename(
         columns=(
             {
@@ -29,9 +33,9 @@ def _parse_lidar_data(lidar_data_string: str) -> pd.DataFrame:
                 28: "enter_time",
                 29: "leave_date",
                 30: "leave_time",
-                35: "y0",
-                39: "y1",
-                40: "height",
+                34: "y0",
+                38: "y1",
+                39: "height",
             }
         ),
         inplace=True,
@@ -71,7 +75,9 @@ def _add_features_to_lidar(raw_lidar_data: pd.DataFrame) -> pd.DataFrame:
     return lidar_data
 
 
-def parse_lidar_data(filename: str) -> pd.DataFrame:  # is a List[LidarData]
+def parse_lidar_data(
+    filename: str, column_count=48
+) -> pd.DataFrame:  # is a List[LidarData]
     text_lidar_data = _load_lidar_data_as_string(filename)
-    raw_lidar_data = _parse_lidar_data(text_lidar_data)
+    raw_lidar_data = _parse_lidar_data(text_lidar_data, column_count)
     return _add_features_to_lidar(raw_lidar_data)
