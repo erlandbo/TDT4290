@@ -2,7 +2,7 @@
 Preprocess data and audio in preprocess_data.ipynb
 
 # Audio classification using Pytorch and Librosa
-Run instructions classification
+Run instructions for classification
 ```bash
 python audio_classification.py -c <class>
 ```
@@ -13,7 +13,7 @@ python audio_classification.py -c 3
 
 
 # Audio regression using Pytorch and Librosa
-Run instructions classification
+Run instructions for regression
 ```bash
 python audio_regression.py -c <class>
 ```
