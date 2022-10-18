@@ -16,10 +16,10 @@ def label_audio_with_lidar(
     diff_half = (absolute_end - absolute_start) / 2
     lidar["audio_start_s"] = (
         absolute_start + diff_half - (vehicle_clip_length_s / 2)
-    ).astype("int")
+    ).astype("float")
     lidar["audio_end_s"] = (
         absolute_end - diff_half + (vehicle_clip_length_s / 2)
-    ).astype("int")
+    ).astype("float")
     if audio_length is None:
         return lidar
     audio_end = audio_start + audio_length
