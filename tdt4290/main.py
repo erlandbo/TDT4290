@@ -1,5 +1,3 @@
-import json
-
 import pandas as pd
 
 from tdt4290.classify_lidar import classify_lidar
