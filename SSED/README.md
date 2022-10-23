@@ -32,7 +32,7 @@ pip install -r requirements.txt
 - Pytorch: You may want to install a specific torch version https://pytorch.org/get-started/locally/
 
 # How to create "state of the art model" with your own data
-Okay, so you have a problem where you actually need to create your own * *state of the art* * model for sound event detection, because of reasons. No worries! I'll take you through the steps of doing it right here. BTW, this section is still being written/developed, email me if you have any questions. The project is setup for classification on 3 vehicle classes, but if youu want to change the number of classes:
+Okay, so you have a problem where you actually need to create your own * *state of the art* * model for sound event detection, because of reasons. No worries! I'll take you through the steps of doing it right here. BTW, this section is still being written/developed, email me if you have any questions. The project is setup for classification on 3 vehicle classes, but if you want to change the number of classes:
 
 Change the following sections
 
