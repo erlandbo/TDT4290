@@ -6,3 +6,9 @@ resnet/audio_22092022.WAV
 resnet/train/*.wav
 resnet/valid/*.wav
 resnet/.ipynb_checkpoints/
+*.WAV
+*.wav
+*.csv
+*.pyc
+*.ckpt
+SSED/effnet/latest_checkpoint

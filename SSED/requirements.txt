@@ -1,0 +1,12 @@
+yacs
+tqdm
+tensorboard
+efficientnet_pytorch
+numpy
+pandas
+matplotlib
+torch
+torchvision
+torchaudio
+pydub
+librosa
