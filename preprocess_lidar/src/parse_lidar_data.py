@@ -17,7 +17,7 @@ def _parse_lidar_data(lidar_data_string: str, column_count: int) -> pd.DataFrame
         sep=" ",
         engine="python",
         quoting=3,
-        on_bad_lines="warn",  # TODO: Handle this
+        on_bad_lines="warn",
         names=[i for i in range(column_count + 1)],
         header=None,
     )
@@ -75,7 +75,7 @@ def _add_features_to_lidar(raw_lidar_data: pd.DataFrame) -> pd.DataFrame:
     return lidar_data
 
 
-def parse_lidar_data(
+def parse_lidar(
     filename: str, column_count=48
 ) -> pd.DataFrame:  # is a List[LidarData]
     text_lidar_data = _load_lidar_data_as_string(filename)

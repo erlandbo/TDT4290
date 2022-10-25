@@ -1,3 +1,5 @@
+from typing import Dict
+
 import pandas as pd
 
 CLASSES = {
@@ -11,11 +13,13 @@ CLASSES = {
 }
 
 
-def classify_lidar(lidar_data: pd.DataFrame):
+def classify_lidar(
+    lidar_data: pd.DataFrame, classes: Dict[str, Dict[str, int]] = CLASSES
+):
     lidar_data_copy = lidar_data.copy()
     lidar_data_copy["class_1"] = None
     lidar_data_copy["class_2"] = None
-    for class_1_key, sub_classes in CLASSES.items():
+    for class_1_key, sub_classes in classes.items():
         for class_2_key, value in sub_classes.items():
             lidar_data_copy.loc[
                 (lidar_data_copy["width"] <= value)

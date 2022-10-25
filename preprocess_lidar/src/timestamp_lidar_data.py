@@ -3,7 +3,7 @@ from typing import Optional
 import pandas as pd
 
 
-def label_audio_with_lidar(
+def timestamp_lidar(
     lidar: pd.DataFrame,
     audio_start: pd.Timestamp,  # = pd.to_datetime("2022-09-22 10:05:10.0000"),
     vehicle_clip_length_s: int = 2,
