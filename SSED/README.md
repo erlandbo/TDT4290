@@ -62,7 +62,7 @@ To train the model:
 python train.py configs/default.yaml
 ```
 
-
+Experimental
 Then to run inferrence with the model you've trained:
 
 ```bash
