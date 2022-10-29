@@ -77,7 +77,8 @@ if __name__ == "__main__":
     data = args["data"]
     class_ = args["class"]
     assert audio is not None and data is not None, "No data or audio provided"
-    name_audio = audio.split(".")[0]
+    name_audio = audio.split("/")[-1].split(".")[0]
+    if name_audio == "": name_audio = audio
     path = str(Path.cwd())
     audio_path = path + "/" + audio
     data_path = path + "/" + data

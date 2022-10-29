@@ -11,4 +11,7 @@ resnet/.ipynb_checkpoints/
 *.csv
 *.pyc
 *.ckpt
-SSED/effnet/latest_checkpoint
+SSED/outputs
+SSED/env
+SSED/.ipynb_checkpoints/
+SSED/classifier/data/data/kauto5cls.zip

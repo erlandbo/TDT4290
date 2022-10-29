@@ -10,14 +10,6 @@ This codebase should be easily extendable and reusable for most sound event dete
 
 So the full list of bash terminal commands to train a (somewhat) state of the art sound event detection system for the bird sounds in the dataset should be as simple as:
 
-
-(Recommended) Create a conda environment that will contain python 3 with dependencies:
-```
-conda env create -f ssed_env.yml
-conda activate ssed_tdt4290
-```
-
-
 Another option is to use pip, assuming you have a somewhat new version of python3 already installed, and has installed the virtualenv package.
 
 ```bash
@@ -26,6 +18,15 @@ python3 -m venv env
 . env/bin/activate
 pip install -r requirements.txt
 ```
+
+
+Create a conda environment that will contain python 3 with dependencies:
+```
+conda env create -f ssed_env.yml
+conda activate ssed_tdt4290
+```
+
+
 
 
 ## Troubleshooting

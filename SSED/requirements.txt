@@ -10,3 +10,4 @@ torchvision
 torchaudio
 pydub
 librosa
+jupyterlab
