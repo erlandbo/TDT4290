@@ -24,8 +24,8 @@ but ResNet 34 was the most accurate on the few epochs that we have run.
 | width (regression)         | 16 - 18  (MAE)         |  50             |
 | height (regression)        | 22 - 24  (MAE)         |  50             |
 | duration (regression)      | 0.16 - 0.17  (MAE)     |  50             |
-| 3 classes (classification) |             (Accuracy) | |
-| 5 classes (classification) |             (Accuracy) | |
+| 3 classes (classification) |     0.876   (Accuracy) |  50             |
+| 5 classes (classification) |  0.34-0.41  (Accuracy) |  50             |
 
 ## Files / Scripts 
 
