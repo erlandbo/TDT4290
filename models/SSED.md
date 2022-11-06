@@ -34,7 +34,7 @@ Allmost all of the configurations from the bird-classification are kept, except 
 As mentioned in the master thesis, the results are very dependent on the windows-size, number of hops per windows and IoU-treshhold. it is encouraged to experiment with these to improve the results.  But you may want the run more epochs and increase/decrease the batchsize depending on the results. A samling rate of 16kHZ has been set on all audio data
 
 # Results
-With the default configurations and hardware requirements, the models should get decent results after approximately 25 epochs. The master thesis used 5740 sound events annotated from 450 hours of audio [1]. This is significantly more than our total amount of hours of recording of vehicles (approximately 10-15 hours).
+With the default configurations and hardware requirements, the models should get decent results after approximately 25 epochs. The master thesis used 5740 sound events annotated from 450 hours of audio [1]. This is significantly more than our total amount of hours of recording of vehicles (approximately 11-12 hours and 3117 vehicles).
 
 After some epochs with training the codebase should achieve approximately 0.9-0.95 AP for both medium and large vehilces while the AP for small vehicles varies between 0.35-0.7 depending on the dataset used. The total MAP will thus be affected by the difficulties with small vehicles and thus be somewhere between 0.7-0.9 depending on the dataset and difficulties with small vehicles. There might be some imbalance in the dataset and resampling by adding more examples of small-vehicles has often given better results for small vehicles. 
 
