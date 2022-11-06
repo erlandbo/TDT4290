@@ -30,7 +30,7 @@ But you might run the model on lower compute power. Try to reduce the batch-size
 # Configurations
 We have set the number of classes to 3; namely small, medium and large vehicles.
 
-Allmost all of the configurations from the bird-classification are kept, except for decreasing the batchsize from 32 to 8 for training and testing. Checout the the configurations in SSED/classifiser/config/defaults.py and SSED/configs/default.yaml and the master thesis for more details.
+Allmost all of the configurations from the bird-classification are kept, except for decreasing the batchsize from 32 to 8 for training and testing. Checkout the the configurations in SSED/classifiser/config/defaults.py and SSED/configs/default.yaml and the master thesis for more details. If you want to change the classification; take a look at classifier/data/datasets/__init__.py and classifier/data/datasets/kauto5cls.py.
 As mentioned in the master thesis, the results are very dependent on the windows-size, number of hops per windows and IoU-treshhold. it is encouraged to experiment with these to improve the results.  But you may want the run more epochs and increase/decrease the batchsize depending on the results. A samling rate of 16kHZ has been set on all audio data
 
 # Results
