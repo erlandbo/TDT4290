@@ -1,0 +1,50 @@
+# Model: SSED - Sliding-window Sound Event Detection
+
+Source: [GitHub-link](https://github.com/bendikbo/SSED).
+
+Master Thesis: [Thesis](https://github.com/bendikbo/SSED/blob/main/thesis.pdf).
+
+Status: Runs.
+
+## About
+
+The SSED repository contains a sliding window sound event detection system developed for a master thesis at NTNU IES by Bendik Bogfjellmo, with contributions by NINA - Norsk Institutt for NAturfroskning. The problem of detection and classification of event vocalizations falls into a broader category of machine learning problems commonly referred to as Sound Event Detection (SED). The system should utilize a deep learning model to produce the output. The outputs should be formatted as a sound event label, the starting time of the sound event (onset), and the end time of the sound event (offset) [1].
+
+it is highly recommended to read the master thesis and the original repo for further details.
+
+
+# Models
+The model used for classification can be set in SSED/classifiser/config/defaults.py and SSED/configs/default.yaml. The codebase includes EfficientNet, ResNet34 and ResNet50. EfficientNet is set by default.
+
+# Dataset
+
+The author used a self-described active window"-method in Audacity. The method allows to only annotate parts of an audio file, as long as you label the start of an annotated section of the file with "BEGIN" and the end of the annotated section with "END". Then the script in classifier/create_dataset.py should preprocess your annotated data, and split your source audio files into .wav files and .csv files containing descriptions of your sound events. The group bypassed this script by splitting the audio in 10-seconds slices with a corresponding .csv file which follows the same conventions as the models expects. Each .csv file includes a BEGIN-section, END-section and a class-section [1].
+
+# Hardware requirements
+The model has been tested on these Linux systems 
+- 3060 12GB VRAM, Intel Core i9-10850K, 32GB RAM, Ubuntu 22.04
+- NVidia Tesla T4, 16 vCPU, 32 GB RAM, Debian 10, Google Cloud
+
+But you might run the model on lower compute power. Try to reduce the batch-size if you are unable to run the model with the default specifications.
+
+# Configurations
+We have set the number of classes to 3; namely small, medium and large vehicles.
+
+Allmost all of the configurations from the bird-classification are kept, except for decreasing the batchsize from 32 to 8 for training and testing. Checout the the configurations in SSED/classifiser/config/defaults.py and SSED/configs/default.yaml and the master thesis for more details.
+As mentioned in the master thesis, the results are very dependent on the windows-size, number of hops per windows and IoU-treshhold. it is encouraged to experiment with these to improve the results.  But you may want the run more epochs and increase/decrease the batchsize depending on the results. A samling rate of 16kHZ has been used on all audio data
+
+# Results
+With the default configurations and hardware requirements, the models should get decent results after approximately 25 epochs. The master thesis used 5740 sound events annotated from 450 hours of audio [1]. This is signifancly more than our total amount of hours of recording of vehicles (approximately 10-15 hours).
+
+After some epochs with training the codebase should achieve approximately 0.95 AP for both medium and large vehilces while the AP for small vehicles varies between 0.35-0.6 depending on the dataset used. The total MAP will thus be affected by the difficulties with small vehicles and thus be somewhere between 0.7-0.9 depending on the dataset and difficulties with small vehicles. There might be some imbalance in the dataset and resampling by adding more examples of small-vehicles has often given better results for small vehicles. 
+
+
+
+
+
+# References
+<a id="1">[1]</a> 
+Bendik Bogfjellmo (2021). 
+Two deep learning approaches to Sound Event Detection for bird sounds in the arctic biosphere
+Master’s thesis in Electronics Systems Design and Innovation NTNU Supervisor: Guillaume Dutilleux July 2021
+
