@@ -22,8 +22,21 @@ This approach does not take time into consideration and rely on already sliced a
 
 ## Findings 
 
-Based on the results we are not able to provide  a satesfactionary regressions result on width 
-based on mel coefecients and zero crossing rate.
-The prediction given by the models were only sligthly better than always preidcting the average. 
-However, it appears that the time a vehicle use to pass the sensor is of high importance when attemping
-to predict its width. Several different approaches were tried but none were succsessfull. 
+Based on the results we are able to get a prediction which is approx. 6 cm better than just guessing the average width. 
+If we include the time it takes for a car to pass the sensor the model is able to preict the width with MAE of 7-8 cm.  
+Several different approaches were tried but none were succsessfull. 
+
+##Files
+
+### Preprocess data 
+Preprocess data and audio in create_data.ipynb.
+This notebook uses lidar data and audio 
+recordings found in `../../data/` folder and stores splitted audio files 
+in the folder "../../data/splitted_audio". 
+
+
+### Width regression
+By using Librosa and Pycaret perform regression on width with and without the duration of the passing car
+in get_features.ipynb 
+
+\bNB! Has to run on Python 3.8.2 to be able to run Pycaret.
