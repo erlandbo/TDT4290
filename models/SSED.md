@@ -10,7 +10,7 @@ Status: Runs.
 
 The SSED repository contains a sliding window sound event detection system developed for a master thesis at NTNU IES by Bendik Bogfjellmo, with contributions by NINA - Norsk Institutt for NAturfroskning. The problem of detection and classification of event vocalizations falls into a broader category of machine learning problems commonly referred to as Sound Event Detection (SED). The system should utilize a deep learning model to produce the output. The outputs should be formatted as a sound event label, the starting time of the sound event (onset), and the end time of the sound event (offset) [1].
 
-it is highly recommended to read the master thesis and the original repo for further details.
+It is highly recommended to read the master thesis and the original repo for further details.
 
 
 # Models
