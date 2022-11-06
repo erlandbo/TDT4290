@@ -39,4 +39,4 @@ in the folder "../../data/splitted_audio".
 By using Librosa and Pycaret perform regression on width with and without the duration of the passing car
 in get_features.ipynb 
 
-\bNB! Has to run on Python 3.8.2 to be able to run Pycaret.
+**NB! Has to run on Python 3.8.2 to be able to run Pycaret.**
