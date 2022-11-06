@@ -22,7 +22,7 @@ The author used a self-described active window"-method in Audacity. The method a
 
 # Hardware requirements
 The model has been tested on these Linux systems 
-- 3060 12GB VRAM, Intel Core i9-10850K, 32GB RAM, Ubuntu 22.04
+- Nvidia RTX 3060 12GB VRAM, Intel Core i9-10850K, 32GB RAM, Ubuntu 22.04
 - NVidia Tesla T4, 16 vCPU, 32 GB RAM, Debian 10, Google Cloud
 
 But you might run the model on lower compute power. Try to reduce the batch-size if you are unable to run the model with the default specifications.
