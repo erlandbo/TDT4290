@@ -30,33 +30,18 @@ but ResNet 34 was the most accurate on the few epochs that we have run.
 ## Files / Scripts 
 
 ### Preprocess data 
-Preprocess data and audio in preprocess_data.ipynb.
+`preprocess_data.ipynb`
+Notebook for preprocessing data and audio for this ResNet model.
+
 This notebook uses lidar data and audio 
 recordings found in `../../data/` folder.
 
 ### Audio classification
-Classification using Pytorch and Librosa
-Run instructions for classification
-
-```bash
-python audio_classification.py -c <class>
-```
-
-Classification with 3 classes 
-```bash
-python audio_classification.py -c 3
-```
+`Audio_classification.ipynb`
+Classification using Pytorch and Librosa 
 
 
 ### Audio regression
+`Audio_regression.ipynb`
 Regression using Pytorch and Librosa
 
-Run instructions for regression
-```bash
-python audio_regression.py -c <class>
-```
-
-Regression on width 
-```bash
-python audio_regression.py -c width
-```
