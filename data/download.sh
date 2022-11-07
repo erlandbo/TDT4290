@@ -10,8 +10,8 @@ echo "#         DOWNLOADING DATA          #"
 echo "#####################################"
 echo ""
 
-fileId=1T3MKM1SIjXCL9bgGgRJptyyjrALO5TQp
-fileName=dataset.zip
+fileId=1Zx0vzrE8yNJ4sUxSBdVMPoC-qFBM2Cud
+fileName=audio_all.zip
 curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
 code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"  
 curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
@@ -23,8 +23,7 @@ echo "#         UNZIPPING DATASETS        #"
 echo "#####################################"
 echo ""
 
-rm -rf kauto5cls
-unzip dataset.zip
+unzip audio_all.zip
 
 
 echo ""
@@ -33,4 +32,4 @@ echo "#       CLEANING UP ZIP-FILE        #"
 echo "#####################################"
 echo ""
 
-rm dataset.zip
+rm audio_all.zip
