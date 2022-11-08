@@ -1,6 +1,11 @@
 # TDT4290 Customer Driven Project  (2022 Fall)
 
-## Introduction to acoustic-based vehicle dimension measurement
+| **Task**     | *Acoustic based vehicle detection and classification* |
+|----|-----|
+| **Group**    | 6       |
+| **Customer** | [Q-FREE](https://www.q-free.com)  |
+
+## Introduction
 
 Electronic toll collection (ETC) has played a key role in
 revolutionizing the flow of modern traffic.
@@ -41,13 +46,26 @@ TDT4290/
 
 
 ## Data
+The `data/` folder contains the following types of files used by the models:
+- Lidar logs
+    1. Raw logs
+    2. Processed logs matched with audio
+- Audio files
 
 
-## Preproccesing
+## Preprocessing
+The `preprocess/` folder contains the necessary files
+for preprocessing the lidar log and information
+on audio preprocessing.
 
+For more information on features used by the different models,
+check out [Feature Exploration](./preprocess_data/feature_exploration.md).
 
 ## Models
 Information on all the models examined can be found under the `models/` folder.
+
+For more information about the different models,
+check out [Model Overview](./models/README.md).
 
 ### SSED
 This model uses sliding window for sound event detection (SED).
@@ -57,22 +75,22 @@ There is both a regression and classification variant of this model.
 The classification one yielded the best result based on the limited
 training we were able to do.
 
-[Read More](./models/SSED.md)
+[Read more on SSED](./models/SSED.md)
 
 ### ResNet
 This model uses a redisual network for doing classification and regression
 on audio files of length 2 seconds.
 
-[Read More](./models/resnet/README.MD)
+[Read more on ResNet](./models/resnet/README.MD)
 
 ### Classical ML - Mel Coeffisients
 This model uses a classical ML approach for regression on audio files by
 extracting features like mel coeffisients on audio files with length of 2 seconds.
 
-[Read More](./models/mel_coef/README.MD)
+[Read more on MEL Coef](./models/mel_coef/README.MD)
 
 ### FDY-CRNN
 This model looked promising for sound event detection (SED),
 but we were unfortunately unable to apply it to our dataset.
 
-[Read More](./models/FDY-CRNN.md)
+[Read more on FDY-CRNN](./models/FDY-CRNN.md)
