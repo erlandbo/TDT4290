@@ -1,4 +1,8 @@
-# ResNet
+# Model: ResNet
+
+**Status**: Runs.
+
+## About
 
 This model uses the pretrained [pytorch ResNet34 model](https://pytorch.org/hub/pytorch_vision_resnet/)
 for regression analysis on mel spectograms of soud data.
@@ -30,18 +34,25 @@ but ResNet 34 was the most accurate on the few epochs that we have run.
 ## Files / Scripts 
 
 ### Preprocess data 
-`preprocess_data.ipynb`
+File:`preprocess_data.ipynb`
+
 Notebook for preprocessing data and audio for this ResNet model.
 
 This notebook uses lidar data and audio 
 recordings found in `../../data/` folder.
 
 ### Audio classification
-`Audio_classification.ipynb`
+File: `Audio_classification.ipynb`
+
 Classification using Pytorch and Librosa 
+
+Tested on *3* (small, medium and large) and *5* (small, medium-small, medium, medium-large, large) vehicle classes.
 
 
 ### Audio regression
-`Audio_regression.ipynb`
+File: `Audio_regression.ipynb`
+
 Regression using Pytorch and Librosa
+
+Tested on *width*, *height* and *duration* (time spent crossing toll station).
 
