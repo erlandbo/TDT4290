@@ -7,6 +7,17 @@ resnet/train/*.wav
 resnet/valid/*.wav
 resnet/.ipynb_checkpoints/
 
+*.WAV
+*.wav
+*.csv
+*.pyc
+*.ckpt
+SSED/outputs
+SSED/env
+SSED/.ipynb_checkpoints/
+SSED/classifier/data/data/kauto5cls.zip
+SSED/predictions
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

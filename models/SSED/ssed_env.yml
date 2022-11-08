@@ -1,0 +1,25 @@
+name: ssed_tdt4290
+
+channels:
+    - pytorch
+    - conda-forge
+    - defaults
+
+dependencies:
+    - python
+    - pytorch
+    - torchvision
+    - torchaudio
+    - cudatoolkit=11.6
+    - jupyter
+    - librosa
+    - seaborn
+    - pandas
+    - yacs
+    - tqdm
+    - tensorboard
+    - efficientnet-pytorch
+    - pydub
+    - pip
+    - pip:
+          - torchlibrosa
