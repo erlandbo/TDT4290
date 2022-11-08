@@ -24,7 +24,7 @@ This approach does not take time into consideration and rely on already sliced a
 
 Based on the results we are able to get a prediction which is approx. 6 cm better than just guessing the average width. 
 If we include the time it takes for a car to pass the sensor the model is able to preict the width with MAE of 7-8 cm.  
-Several different approaches were tried but none were succsessfull. 
+Several different approaches were tried to estimate the duration but none were succsessfull. 
 
 ## Files
 
