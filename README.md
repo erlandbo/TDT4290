@@ -52,6 +52,12 @@ The `data/` folder contains the following types of files used by the models:
     2. Processed logs matched with audio
 - Audio files
 
+The audio-data can be downloaded by script. The script must be given executable privileges, by e.g. chmod 
+```
+cd data
+chmod +x download.sh
+./download
+```
 
 ## Preprocessing
 The `preprocess/` folder contains the necessary files
