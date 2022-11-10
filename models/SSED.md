@@ -18,7 +18,7 @@ The model used for classification can be set in SSED/classifiser/config/defaults
 
 # Dataset
 
-The author used a self-described active window"-method in Audacity. The method allows to only annotate parts of an audio file, as long as you label the start of an annotated section of the file with "BEGIN" and the end of the annotated section with "END". Then the script in classifier/create_dataset.py should preprocess your annotated data, and split your source audio files into .wav files and .csv files containing descriptions of your sound events. The group bypassed this script by splitting the audio in 10-seconds slices with a corresponding .csv file which follows the same conventions as the models expects. Each .csv file includes a BEGIN-section, END-section and a class-section [1].
+The author used a self-described active window"-method in Audacity. The method allows to only annotate parts of an audio file, as long as you label the start of an annotated section of the file with "BEGIN" and the end of the annotated section with "END". Then the script in classifier/create_dataset.py should preprocess your annotated data, and split your source audio files into .wav files and .csv files containing descriptions of your sound events. That is the audio have been labeled manually in audacity. Since we were provided with labeled datasets, the group bypassed this script by splitting the audio in 10-seconds slices with a corresponding .csv file which follows the same conventions as the models expects. Each .csv file includes a BEGIN-section, END-section and a class-section [1].
 
 # Hardware requirements
 The model has been tested on these Linux systems 
