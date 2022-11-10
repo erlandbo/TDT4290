@@ -1,4 +1,4 @@
-# CLassic machine learning on different audio features
+# Classic machine learning on different audio features
 
 This folder contains notebooks for data pre-processing, feature extraction from audio files 
 and the result of applying different ML algorithms on the calculated features. 
