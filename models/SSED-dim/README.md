@@ -63,7 +63,7 @@ To train the model:
 python train.py configs/default.yaml
 ```
 
-This will train the model for a chosen number of epochs and validate for a chosen number of epochs (checkout the configs in the /classifier/config/defaults.py). Finally after training, the best model from the validation will be loaded and the results from the testing will be printed. 
+This will train the model for a chosen number of epochs and validate for a chosen number of epochs (checkout the configs in the /classifier/config/defaults.py). The model will print the targets and predictions on each validation epoch. 
 
 ## Troubleshooting
 - You may want to reduce the batch-size in classifier/config/defaults.py if you receive a *CUDA OUT OF MEMORY* error.
