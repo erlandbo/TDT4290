@@ -40,7 +40,7 @@ The model has been trained and tested on the following recordings and lidar-data
 - audio_01112022_1.WAV and lidar_data_with_audio_timestamps_nov_01_1.csv
 - audio_01112022_2.WAV and lidar_data_with_audio_timestamps_nov_01_2.csv
 
-The recordings from 21.oktober and 28.october were concidered corrupt because of high picthed noise. 
+The recordings from 21.oktober and 28.october were concidered corrupt because of high pitched noise. 
 
 # Build dataset
 
