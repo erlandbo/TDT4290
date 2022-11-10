@@ -17,10 +17,6 @@ pip install -r requirements.txt
 
 
 Another option is to create a conda environment that will contain python 3 with dependencies:
-```
-conda env create -f ssed_env.yml
-conda activate ssed_tdt4290
-```
 
 
 ## Troubleshooting
