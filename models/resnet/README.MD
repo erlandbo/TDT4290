@@ -4,8 +4,8 @@
 
 ## About
 
-This model uses the pretrained [pytorch ResNet34 model](https://pytorch.org/hub/pytorch_vision_resnet/)
-for regression analysis on mel spectograms of soud data.
+This model uses the pre-trained [pytorch ResNet34 model](https://pytorch.org/hub/pytorch_vision_resnet/)
+for regression analysis on mel spectrograms of sound data.
 This model does not take time into account and only looks
 at audio samples with vehicles in them.
 
@@ -17,13 +17,13 @@ but ResNet 34 was the most accurate on the few epochs that we have run.
 
 **Data pipeline:**
 1. Split into 2s audio samples
-2. Convert audio sample into MEL Spectogram
-3. Convert MEL Spectogram into image to be used py model
+2. Convert audio sample into MEL Spectrogram
+3. Convert MEL Spectrogram into image to be used py model
 
 
 
 ## Results
-| Dimension                  | MAE / Accuracy         |   Epochs runned |
+| Dimension                  | MAE / Accuracy         |   Epochs ran |
 |----------------------------|-----------------------:|----------------:|
 | width (regression)         | 16 - 18  (MAE)         |  50             |
 | height (regression)        | 22 - 24  (MAE)         |  50             |
@@ -33,13 +33,12 @@ but ResNet 34 was the most accurate on the few epochs that we have run.
 
 ## Files / Scripts 
 
-### Preprocess data 
+### Pre-process data 
 File:`preprocess_data.ipynb`
 
 Notebook for preprocessing data and audio for this ResNet model.
 
-This notebook uses lidar data and audio 
-recordings found in `../../data/` folder.
+This notebook uses lidar data found in `../../data/` folder, and audio that can be downloaded (to the `../../data` folder) with the script [download.sh](../../data/download.sh).
 
 ### Audio classification
 File: `Audio_classification.ipynb`
