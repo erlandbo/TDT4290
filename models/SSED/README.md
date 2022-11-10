@@ -90,7 +90,7 @@ python build_dataset.py -a <audio> -d <data>
 
 For example
 ```bash
-python build_dataset.py -a ../../data/audio_22092022.WAV -d ../../data/lidar_data_22092022.csv
+python build_dataset.py -a ../../data/audio_22092022.WAV -d ../../data/lidar_data_with_audio_timestamps_22.csv
 
 python build_dataset.py -a ../../data/audio_27092022_1.WAV -d ../../data/lidar_data_with_audio_timestamps_27_1.csv
 python build_dataset.py -a ../../data/audio_27092022_2.WAV -d ../../data/lidar_data_with_audio_timestamps_27_2.csv
