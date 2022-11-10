@@ -69,15 +69,24 @@ def _add_features_to_lidar(raw_lidar_data: pd.DataFrame) -> pd.DataFrame:
         axis=1,
         inplace=True,
     )
-    lidar_data["width"] = lidar_data["y1"] - lidar_data["y0"]
     lidar_data["duration"] = lidar_data["datetime_leave"] - lidar_data["datetime_enter"]
     lidar_data["duration"] = lidar_data.duration.dt.total_seconds()
     return lidar_data
 
 
-def parse_lidar(
-    filename: str, column_count=48
-) -> pd.DataFrame:  # is a List[LidarData]
+def parse_lidar(filename: str, column_count=48) -> pd.DataFrame:  # is a List[LidarData]
+    """Parses a .txt file of lidar data to a Pandas data frame.
+
+    Args:
+        filename (str): The path to the lidar data .txt file.
+        column_count (int, optional): The number of columns in the lidar data.
+            Defaults to 48.
+
+    Returns:
+        pd.DataFrame: A pandas data frame to represent the lidar data with columns:
+            datetime_enter, datetime_leave, y0, y1, height, width, front_area, duration.
+
+    """
     text_lidar_data = _load_lidar_data_as_string(filename)
     raw_lidar_data = _parse_lidar_data(text_lidar_data, column_count)
     return _add_features_to_lidar(raw_lidar_data)

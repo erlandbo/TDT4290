@@ -1,1 +1,0 @@
-# Preprocessing of lidar data
