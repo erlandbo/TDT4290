@@ -97,6 +97,7 @@ python build_dataset.py -a ../data/audio_01112022_1.WAV -d ../data/lidar_data_wi
 python build_dataset.py -a ../data/audio_01112022_2.WAV -d ../data/lidar_data_with_audio_timestamps_nov_01_2.csv # 1.nov.
 ```
 The audio-argument -a corresponds to the audio-recording .wav and the data-argument -d corresponds to the lidar-data .csv
+The script expects a relative path to the data, so you must keep this convention.
 
 
 The command will split the 80% of the dataset to training, 10% of the dataset to validation and 10% of the dataset to testing. 
