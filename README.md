@@ -59,6 +59,46 @@ chmod +x download.sh
 ./download.sh
 ```
 
+   
+## Recording 22.september 2022
+Corresponding files:
+- audio_22092022.WAV and lidar_data_with_audio_timestamps_22.csv
+
+| Class   | Train   | Val  | Test|
+| ------- | --- | --- |---|
+| Small | 29 | 3 |3|
+| Medium | 344 | 29 |49|
+| Large | 47 | 6 |9|
+
+
+## Recording 27.september 2022
+Corresponding files:
+- audio_27092022_1.WAV and lidar_data_with_audio_timestamps_27_1.csv
+- audio_27092022_2.WAV and lidar_data_with_audio_timestamps_27_2.csv
+
+
+| Class   | Train   | Val  | Test|
+| ------- | --- | --- |---|
+| Small | 68 | 18 |16|
+| Medium | 756 | 107 |142|
+| Large | 78 | 11 |6|
+
+
+## Recording 01.November 2022
+Corresponding files:
+- audio_01112022_1.WAV and lidar_data_with_audio_timestamps_nov_01_1.csv
+- audio_01112022_2.WAV and lidar_data_with_audio_timestamps_nov_01_2.csv
+
+
+
+| Class   | Train   | Val  | Test|
+| ------- | --- | --- |---|
+| Small | 28 | 3 |4|
+| Medium | 710 | 105 |128|
+| Large | 77 | 14 |9|
+
+
+
 ## Preprocessing
 The `preprocess/` folder contains the necessary files
 for preprocessing the lidar log and information
