@@ -1,5 +1,10 @@
 # SSED - Sliding-window Sound Event Detection
 
+Source: [GitHub-link](https://github.com/bendikbo/SSED).
+
+Master Thesis: [Thesis](https://github.com/bendikbo/SSED/blob/main/thesis.pdf).
+
+
 Below is an extract from the original repo SSED - Sliding-window Sound Event Detection.
 
 This repository contains a sliding window sound event detection system developed for a master thesis at NTNU IES, with contributions by NINA - Norsk Institutt for NAturfroskning.
