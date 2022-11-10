@@ -100,9 +100,9 @@ Corresponding files:
 
 | Class   | Count |
 | ------- | --- | 
-| Small | 104 |
+| Small | 35 |
 | Medium | 992 |
-| Large | 35 |
+| Large | 124 |
 
 
 
