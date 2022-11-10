@@ -90,13 +90,13 @@ python build_dataset.py -a <audio> -d <data>
 
 For example
 ```bash
-python build_dataset.py -a ../data/audio_22092022.WAV -d ../data/lidar_data_22092022.csv # 22.sept.
+python build_dataset.py -a ../data/audio_22092022.WAV -d ../data/lidar_data_22092022.csv
 
-python build_dataset.py -a ../data/audio_27092022_1.WAV -d ../data/lidar_data_with_audio_timestamps_27_1.csv # 27.sept.
-python build_dataset.py -a ../data/audio_27092022_2.WAV -d ../data/lidar_data_with_audio_timestamps_27_2.csv # 27.sept.
+python build_dataset.py -a ../data/audio_27092022_1.WAV -d ../data/lidar_data_with_audio_timestamps_27_1.csv
+python build_dataset.py -a ../data/audio_27092022_2.WAV -d ../data/lidar_data_with_audio_timestamps_27_2.csv
 
-python build_dataset.py -a ../data/audio_01112022_1.WAV -d ../data/lidar_data_with_audio_timestamps_nov_01_1.csv # 1.nov.
-python build_dataset.py -a ../data/audio_01112022_2.WAV -d ../data/lidar_data_with_audio_timestamps_nov_01_2.csv # 1.nov.
+python build_dataset.py -a ../data/audio_01112022_1.WAV -d ../data/lidar_data_with_audio_timestamps_nov_01_1.csv 
+python build_dataset.py -a ../data/audio_01112022_2.WAV -d ../data/lidar_data_with_audio_timestamps_nov_01_2.csv
 ```
 The audio-argument -a corresponds to the audio-recording .wav and the data-argument -d corresponds to the lidar-data .csv
 The script expects a relative path to the data, so you must keep this convention.
