@@ -88,6 +88,9 @@ Notice that some classes are underepresented so the chosen dataset-split may aff
 python build_dataset.py -a <audio> -d <data> 
 ```
 
+The audio-argument -a corresponds to the audio-recording .wav and the data-argument -d corresponds to the lidar-data .csv
+The script expects a relative path to the data, so you must keep this convention.
+
 For example
 ```bash
 python build_dataset.py -a ../../data/audio_22092022.WAV -d ../../data/lidar_data_with_audio_timestamps_22.csv
@@ -96,9 +99,6 @@ python build_dataset.py -a ../../data/audio_27092022_2.WAV -d ../../data/lidar_d
 python build_dataset.py -a ../../data/audio_01112022_1.WAV -d ../../data/lidar_data_with_audio_timestamps_nov_01_1.csv 
 python build_dataset.py -a ../../data/audio_01112022_2.WAV -d ../../data/lidar_data_with_audio_timestamps_nov_01_2.csv
 ```
-The audio-argument -a corresponds to the audio-recording .wav and the data-argument -d corresponds to the lidar-data .csv
-The script expects a relative path to the data, so you must keep this convention.
-
 
 The command will split the 80% of the dataset to training, 10% of the dataset to validation and 10% of the dataset to testing. 
 
