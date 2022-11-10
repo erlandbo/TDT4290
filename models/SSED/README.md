@@ -52,8 +52,8 @@ Corresponding files:
 | Class   | Train   | Val  | Test|
 | ------- | --- | --- |---|
 | Small | 29 | 3 |3|
-| Medium | 368 | 29 |55|
-| Large | 63 | 8 |9|
+| Medium | 344 | 29 |49|
+| Large | 47 | 6 |9|
 
 
 ## Recording 27.september 2022
@@ -66,9 +66,9 @@ Corresponding files:
 
 | Class   | Train   | Val  | Test|
 | ------- | --- | --- |---|
-| Small | 72 | 18 |16|
-| Medium | 838 | 115 |150|
-| Large | 98 | 13 |6|
+| Small | 68 | 18 |16|
+| Medium | 756 | 107 |142|
+| Large | 78 | 11 |6|
 
 
 ## Recording 01.November 2022
@@ -82,8 +82,8 @@ Corresponding files:
 | Class   | Train   | Val  | Test|
 | ------- | --- | --- |---|
 | Small | 28 | 3 |4|
-| Medium | 784 | 119 |138|
-| Large | 119 | 16 |13|
+| Medium | 710 | 105 |128|
+| Large | 77 | 14 |9|
 
 Notice that some classes are underepresented so the chosen dataset-split may affect the results.
 
