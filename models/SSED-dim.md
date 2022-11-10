@@ -1,4 +1,4 @@
-# Model: SSED - Sliding-window Sound Event Detection
+# Model: SSED - Sliding-window Sound Event Detection with width and height.
 
 Source: [GitHub-link](https://github.com/bendikbo/SSED).
 
