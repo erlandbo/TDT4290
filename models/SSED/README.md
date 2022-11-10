@@ -41,8 +41,6 @@ You can build the dataset with all the recordings or hold-out one for inference.
 Corresponding files:
 - audio_22092022.WAV and lidar_data_with_audio_timestamps_22.csv
 
-The recording were taken from hours 10 to 12.37. There were no precipitation and approximately 11-13 celsius degrees. 
-
 
 | Class   | Train   | Val  | Test|
 | ------- | --- | --- |---|
@@ -56,8 +54,7 @@ Corresponding files:
 - audio_27092022_1.WAV and lidar_data_with_audio_timestamps_27_1.csv
 - audio_27092022_2.WAV and lidar_data_with_audio_timestamps_27_2.csv
 
-
-The recording were taken from hours 12 to 17. There were 10.9mm precipitation that day but not during the recording, and approximately 10-11 celsius degrees. 
+ 
 
 
 | Class   | Train   | Val  | Test|
@@ -73,7 +70,6 @@ Corresponding files:
 - audio_01112022_2.WAV and lidar_data_with_audio_timestamps_nov_01_2.csv
 
 
-The recording were taken from hours 9 to 15. There were no precipitation that day, and approximately 5-9 celsius degrees. 
 
 
 | Class   | Train   | Val  | Test|
@@ -87,14 +83,20 @@ Notice that some classes are underepresented so the chosen dataset-split may aff
 # Build dataset
 
 ```bash
-python build_dataset.py -a <audio> -d <data> -c <class> 
+python build_dataset.py -a <audio> -d <data> 
 ```
 
 For example
 ```bash
-python build_dataset.py -a ../data/audio_22092022.wav -d ../data/lidar_data_22092022.csv -c class_1 
+python build_dataset.py -a ../data/audio_22092022.WAV -d ../data/lidar_data_22092022.csv # 22.sept.
+
+python build_dataset.py -a ../data/audio_27092022_1.WAV -d ../data/lidar_data_with_audio_timestamps_27_1.csv # 27.sept.
+python build_dataset.py -a ../data/audio_27092022_2.WAV -d ../data/lidar_data_with_audio_timestamps_27_2.csv # 27.sept.
+
+python build_dataset.py -a ../data/audio_01112022_1.WAV -d ../data/lidar_data_with_audio_timestamps_nov_01_1.csv # 1.nov.
+python build_dataset.py -a ../data/audio_01112022_2.WAV -d ../data/lidar_data_with_audio_timestamps_nov_01_2.csv # 1.nov.
 ```
-The class-argument corresponds to the class-column in the .csv
+The audio-argument -a corresponds to the audio-recording .wav and the data-argument -d corresponds to the lidar-data .csv
 
 
 The command will split the 80% of the dataset to training, 10% of the dataset to validation and 10% of the dataset to testing. 
@@ -112,18 +114,6 @@ This will train the model for a chosen number of epochs and validate for a chose
 
 ## Troubleshooting
 - You may want to reduce the batch-size in classifier/config/defaults.py if you receive a *CUDA OUT OF MEMORY* error.
-
-
-## Experimental
-Then to run inferrence with the model you've trained:
-
-```bash
-python infer.py configs/default.yaml path/to/audio_file.wav
-```
-
-This trains an EfficientNet-b7 based model on the dataset I've added, with the basic config file, and runs inference based on the model you've trained. 
-
-Notice you may want to experiment with windows-size and IoU threshold for better results.
 
 
 
