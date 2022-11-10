@@ -116,5 +116,6 @@ This will train the model for a chosen number of epochs and validate for a chose
 ## Troubleshooting
 - You may want to reduce the batch-size in classifier/config/defaults.py if you receive a *CUDA OUT OF MEMORY* error.
 
-
+# More features
+This repository used only a few features from the SSED-repo. The model contains much more features than listed over, such as data-augmentation and inference. Checkout the original repo and maser thesis for details.
 
