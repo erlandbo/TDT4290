@@ -40,7 +40,7 @@ After some epochs with training the codebase should achieve a high AP (approxima
 
 
 # Troubleshooting
-If you receive som CUDA-error, please do some Google'ing regarding you error or reduce the batchsize.
+If you receive some CUDA-error, please do some Google'ing regarding you error or reduce the batchsize.
 
 
 # References
