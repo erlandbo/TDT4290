@@ -82,6 +82,7 @@ The classification one yielded the best result based on the limited
 training we were able to do.
 
 [Read more on SSED](./models/SSED.md)
+[Read more on SSED regression on width and height](./models/SSED-dim.md)
 
 ### ResNet
 This model uses a redisual network for doing classification and regression
