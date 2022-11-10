@@ -32,9 +32,9 @@ def split_to_dirs(datapath, audio_path, class_, name_audio, SR=16000):
         active_zone = False
         for j, row in data.iterrows():
             vehicle_start, vehicle_end, class_, width, height = row["entry"], row["exit"], row["class"], row["width"], row["height"]
-            contains_vehicle = (audio_start < vehicle_start and vehicle_end < audio_end) \
-                or (vehicle_start > audio_start and vehicle_start < audio_end and vehicle_end > audio_end) \
-                or (vehicle_end > audio_start and vehicle_end < audio_end and vehicle_start < audio_start )
+            contains_vehicle = (audio_start < vehicle_start and vehicle_end < audio_end)
+                
+                
             if contains_vehicle:
                 #assert vehicle_start - audio_start > 0, "invalid start time"
                 #assert vehicle_end - audio_start < 10, "invalid end time"
