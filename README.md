@@ -59,16 +59,25 @@ chmod +x download.sh
 ./download.sh
 ```
 
+The models has been trained and tested on the following recordings and lidar-data
+- audio_22092022.WAV and lidar_data_with_audio_timestamps_22.csv
+- audio_27092022_1.WAV and lidar_data_with_audio_timestamps_27_1.csv
+- audio_27092022_2.WAV and lidar_data_with_audio_timestamps_27_2.csv
+- audio_01112022_1.WAV and lidar_data_with_audio_timestamps_nov_01_1.csv
+- audio_01112022_2.WAV and lidar_data_with_audio_timestamps_nov_01_2.csv
+
+The recordings from 21.oktober and 28.october were concidered corrupt because of high picthed noise. 
+
    
 ## Recording 22.september 2022
 Corresponding files:
 - audio_22092022.WAV and lidar_data_with_audio_timestamps_22.csv
 
-| Class   | Train   | Val  | Test|
-| ------- | --- | --- |---|
-| Small | 29 | 3 |3|
-| Medium | 344 | 29 |49|
-| Large | 47 | 6 |9|
+| Class   | Count |
+| ------- | --- | 
+| Small | 35 |
+| Medium | 437 |
+| Large | 71 |
 
 
 ## Recording 27.september 2022
@@ -76,12 +85,11 @@ Corresponding files:
 - audio_27092022_1.WAV and lidar_data_with_audio_timestamps_27_1.csv
 - audio_27092022_2.WAV and lidar_data_with_audio_timestamps_27_2.csv
 
-
-| Class   | Train   | Val  | Test|
-| ------- | --- | --- |---|
-| Small | 68 | 18 |16|
-| Medium | 756 | 107 |142|
-| Large | 78 | 11 |6|
+| Class   | Count |
+| ------- | --- | 
+| Small | 104 |
+| Medium | 1054 |
+| Large | 106 |
 
 
 ## Recording 01.November 2022
@@ -90,12 +98,11 @@ Corresponding files:
 - audio_01112022_2.WAV and lidar_data_with_audio_timestamps_nov_01_2.csv
 
 
-
-| Class   | Train   | Val  | Test|
-| ------- | --- | --- |---|
-| Small | 28 | 3 |4|
-| Medium | 710 | 105 |128|
-| Large | 77 | 14 |9|
+| Class   | Count |
+| ------- | --- | 
+| Small | 104 |
+| Medium | 992 |
+| Large | 35 |
 
 
 
