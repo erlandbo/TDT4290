@@ -18,7 +18,7 @@ Exploriatory data analysis can be found in [eda-q-free.ipynb](eda-q-free.ipynb) 
 
 ## Feature exploration
  
-By performing feature exploration we were able to detect several important features that could be used in classefication and regression task. 
+By performing feature exploration we were able to detect several important features that could be used in classification and regression task. 
 
 
 ### Audio features
@@ -26,14 +26,14 @@ By performing feature exploration we were able to detect several important featu
 | Feature            | Model                | Description                                                                                                                                                                                     |
 |--------------------|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | MFCC               | forest/decision tree | mel-frequency cepstrum (MFC) is a representation of the short-term power spectrum of a sound, based on a linear cosine transform of a log power spectrum on a nonlinear mel scale of frequency. |
-| MEL spectrogram    | RESNET/SSD           | A spectrogram where the frequencies are converted to the mel scale.                                                                                                                             |
+| MEL spectrogram    | RESNET/SSED           | A spectrogram where the frequencies are converted to the mel scale.                                                                                                                             |
 | Zero crossing rate | forest/decision tree | Number of times the audio signal crosses 0.                                                                                                                                                     |
-| RMS energy         | Vehicle detection    | Root mean square of the total magnitude of the signal. Correnspond to how loud the signal is.                                                                                                   |
+| RMS energy         | Vehicle detection    | Root mean square of the total magnitude of the signal. Correspond to how loud the signal is.                                                                                                   |
 | Spectral Centroid  | Not used             | Indicates at which frequency the energy of a spectrum is centered upon.                                                                                                                         |
 ### Feature usage
 
-#### SSD and resnet34
-Both models use the mel spectrogram of each passing vehicle to perform image recognition. The resnet takes processed audio files, while the SSD consumes a audio and perform vehicle detection as well as image recognition. 
+#### SSED and resnet34
+Both models use the mel spectrogram of each passing vehicle to perform image recognition. The resnet takes processed audio files, while the SSED consumes a audio and perform vehicle detection as well as image recognition. 
 
 #### Forest / decision tree
 
@@ -49,13 +49,13 @@ By performing feature exploration we were able to detect several important featu
 | Feature            | Model                | Description                                                                                                                                                                                     |
 |--------------------|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | MFCC               | forest/decision tree | mel-frequency cepstrum (MFC) is a representation of the short-term power spectrum of a sound, based on a linear cosine transform of a log power spectrum on a nonlinear mel scale of frequency. |
-| MEL spectrogram    | RESNET/SSD           | A spectrogram where the frequencies are converted to the mel scale.                                                                                                                             |
+| MEL spectrogram    | RESNET/SSED           | A spectrogram where the frequencies are converted to the mel scale.                                                                                                                             |
 | Zero crossing rate | forest/decision tree | Number of times the audio signal crosses 0.                                                                                                                                                     |
-| RMS energy         | Vehicle detection    | Root mean square of the total magnitude of the signal. Correnspond to how loud the signal is.                                                                                                   |
+| RMS energy         | Vehicle detection    | Root mean square of the total magnitude of the signal. Correspond to how loud the signal is.                                                                                                   |
 | Spectral Centroid  | Not used             | Indicates at which frequency the energy of a spectrum is centered upon.                                                                                                                         |
 
-#### SSD and resnet34
-Both models use the mel spectrogram of each passing vehicle to perform image recognition. The resnet takes processed audio files, while the SSD consumes a audio and perform vehicle detection as well as image recognition. 
+#### SSED and resnet34
+Both models use the mel spectrogram of each passing vehicle to perform image recognition. The resnet takes processed audio files, while the SSED consumes a audio and perform vehicle detection as well as image recognition. 
 
 #### Forest / decision tree
 
