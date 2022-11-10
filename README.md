@@ -56,7 +56,7 @@ The audio-data can be downloaded by script. The script must be given executable 
 ```
 cd data
 chmod +x download.sh
-./download
+./download.sh
 ```
 
 ## Preprocessing
