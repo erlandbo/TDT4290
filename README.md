@@ -38,10 +38,8 @@ TDT4290/
 │  ├─ FDY-CRNN.md
 │  ├─ SSED.md
 │  ├─ ...
-├─ preprocess_data/
-│  ├─ ...       # Notebook on audio preprocessing
-├─ preprocess_lidar/
-│  ├─ ...       # Notebook on lidar log processing
+├─ preprocessing
+│  ├─ ...       # Notebooks on audio and lidar preprocessing
 ```
 
 
@@ -66,7 +64,7 @@ The models has been trained and tested on the following recordings and lidar-dat
 - audio_01112022_1.WAV and lidar_data_with_audio_timestamps_nov_01_1.csv
 - audio_01112022_2.WAV and lidar_data_with_audio_timestamps_nov_01_2.csv
 
-The recordings from 21.oktober and 28.october were concidered corrupt because of high picthed noise. 
+The recordings from October 21. and october 28. were considered corrupt because of high pitched noise. 
 
    
 ## Recording 22.september 2022
@@ -107,12 +105,12 @@ Corresponding files:
 
 
 ## Preprocessing
-The `preprocess/` folder contains the necessary files
+The `preprocessing/` folder contains the necessary files
 for preprocessing the lidar log and information
 on audio preprocessing.
 
 For more information on features used by the different models,
-check out [Feature Exploration](./preprocess_data/feature_exploration.md).
+check out the [README](./preprocessing/README.md) here.
 
 ## Models
 Information on all the models examined can be found under the `models/` folder.
@@ -138,9 +136,9 @@ on audio files of length 2 seconds.
 
 [Read more on ResNet](./models/resnet/README.MD)
 
-### Classical ML - Mel Coeffisients
+### Classical ML - Mel Coefficients
 This model uses a classical ML approach for regression on audio files by
-extracting features like mel coeffisients on audio files with length of 2 seconds.
+extracting features like mel coefficients on audio files with length of 2 seconds.
 
 [Read more on MEL Coef](./models/mel_coef/README.MD)
 
