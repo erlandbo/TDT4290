@@ -8,12 +8,16 @@ Status: Runs.
 
 ## About
 
-The SSED repository contains a sliding window sound event detection system developed for a master thesis at NTNU IES by Bendik Bogfjellmo, with contributions by NINA - Norsk Institutt for NAturfroskning. The problem of detection and classification of event vocalizations falls into a broader category of machine learning problems commonly referred to as Sound Event Detection (SED). The system should utilize a deep learning model to produce the output. The outputs should be formatted as a sound event label, the starting time of the sound event (onset), and the end time of the sound event (offset) [1].
+The SSED repository contains a sliding window sound event detection system developed for a master thesis at NTNU IES by Bendik Bogfjellmo. Sound Event Detection systems should utilize a deep learning model to produce an output, formatted as a sound event label, the starting time of the sound event (onset), and the end time of the sound event (offset) [1].
 
 It is highly recommended to read the master thesis and the original repo for further details.
 
+# Changes
+We have made very few changes to the original repo. 
 
-# Models
+- Build Dataset script: The original ssed-repo expects the dataset to be manually labeled in Audacity. Since the group were already provided with a labeled dataset and did not have enough time to manually re-label the dataset, we decided to build a script for building the dataset. The script SSED/build_dataset.py will iterate over each 10seconds interval and build a dataframe by vehicles which are active in the 10second interval. Checkout SSED/build_dataset.py for details.
+- Changed the number of class from 5 to 3 in SSED/configs/defaults.yaml
+
 The model used for classification can be set in SSED/classifiser/config/defaults.py and SSED/configs/default.yaml. The codebase includes EfficientNet, ResNet34 and ResNet50. EfficientNet is set by default.
 
 # Dataset
