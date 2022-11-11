@@ -1,5 +1,7 @@
 ## Install dependencies
 
+Except for the SSED and SSED-dim models, all code in this repository uses this environment.
+
 (Recommended) Install with conda:
 
 	1. Install conda, if you don't already have it, by following the instructions at [this link](https://www.anaconda.com/)
@@ -35,13 +37,3 @@ Updates the environment when the env.yml file is changed:
 	```
 	conda env update --file env.yml --prune
 	```
-
-
-## Troubleshooting 
-
-You may encounter some errors:
-
-These can be resolved with:
-```
-solution
-```
