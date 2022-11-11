@@ -16,8 +16,12 @@ It is highly recommended to read the master thesis and the original repo for fur
 We have made very few changes to the original repo. 
 
 - Build Dataset script: The original ssed-repo expects the dataset to be manually labeled in Audacity. Since the group were already provided with a labeled dataset and did not have enough time to manually re-label the dataset, we decided to build a script for building the dataset. The script SSED/build_dataset.py will iterate over each 10seconds interval and build a dataframe by vehicles which are active in the 10second interval. Checkout SSED/build_dataset.py for details.
-- Changed the number of class from 5 to 3 in SSED/configs/defaults.yaml
-
+- Configuration: Changed the number of class from 5 to 3 in SSED/configs/defaults.yaml
+- Configuration: Changed the number of classes from 5 to 3 in SSED/classifier/config/defaults.py 
+- Configuration: Changed the train-batch size from 32 to 32//4 = 8. We used a division so we would remember the original-batch size
+- Configuration: Changed the test-batch size from 32 to 32//4 = 8. 
+- Configuration: Changed the dereference kauto_dict dictionary from bird-species to vehicle classes in SSED/classifier/data/dataset/__init__py 
+- Configuration: Changed the dictionary label_dict from bird-species to vehicle classes in SSED/classifier/data/dataset/kauto5cls.py
 The model used for classification can be set in SSED/classifiser/config/defaults.py and SSED/configs/default.yaml. The codebase includes EfficientNet, ResNet34 and ResNet50. EfficientNet is set by default.
 
 # Dataset
