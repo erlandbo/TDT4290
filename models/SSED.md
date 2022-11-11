@@ -41,9 +41,6 @@ With the default configurations and hardware requirements, the models should get
 After some epochs with training the codebase should achieve a high AP (approximately 0.8-0.95 AP) for both medium and large vehilces while the AP for small vehicles varies between 0.1-0.7 depending on the dataset used. The total MAP will thus be affected by the difficulties with small vehicles and thus be somewhere between 0.6-0.9 depending on the dataset and difficulties with small vehicles. There might be some imbalance in the dataset and resampling by adding more examples of small-vehicles has often given better results for small vehicles. Checkout the master-thesis for details regarding MAP.
 
 
-# Troubleshooting
-If you receive some CUDA-error, try to reduce the batchsize.
-
 
 # More features
 This repository used only a few features from the SSED-repo. The model contains much more features than listed over, such as data-augmentation and inference. Checkout the original repo and maser thesis for details.
