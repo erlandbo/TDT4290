@@ -4,14 +4,6 @@ Source: [GitHub-link](https://github.com/bendikbo/SSED).
 
 Master Thesis: [Thesis](https://github.com/bendikbo/SSED/blob/main/thesis.pdf).
 
-
-Below is an extract from the original repo SSED - Sliding-window Sound Event Detection.
-
-This repository contains a sliding window sound event detection system developed for a master thesis at NTNU IES, with contributions by NINA - Norsk Institutt for NAturfroskning.
-
-The codebase contains multiple convolutional backbones, and is (almost) fully configurable in both training and inference through yaml specified configurations.
-This codebase should be easily extendable and reusable for most sound event detection tasks, and I hope you get good use of it, just remember I've licensed it under the MIT License, and a lot of the other stuff that I've used used is licensed under several other licenses as well (can be found in the LICENSES subdirectory), read up on those so you don't get hit with a C&D.
-
 # Install dependencies
 
 (Recommended) use pip.
@@ -21,9 +13,6 @@ python3 -m venv env
 . env/bin/activate
 pip install -r requirements.txt
 ```
-
-
-Another option is to create a conda environment that will contain python 3 with dependencies:
 
 
 ## Troubleshooting
@@ -75,7 +64,6 @@ This will train the model for a chosen number of epochs and validate for a chose
 
 ## Troubleshooting
 - You may want to reduce the batch-size in classifier/config/defaults.py if you receive a *CUDA OUT OF MEMORY* error.
-- Alternatively you may want to flush your GPU-memory, by rebooting etc.
 
 # More features
 This repository used only a few features from the SSED-repo. The model contains much more features than listed over, such as data-augmentation and inference. Checkout the original repo and maser thesis for details.
