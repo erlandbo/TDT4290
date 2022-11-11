@@ -45,6 +45,10 @@ After some epochs with training the codebase should achieve a high AP (approxima
 If you receive some CUDA-error, try to reduce the batchsize.
 
 
+# More features
+This repository used only a few features from the SSED-repo. The model contains much more features than listed over, such as data-augmentation and inference. Checkout the original repo and maser thesis for details.
+
+
 # References
 <a id="1">[1]</a> 
 Bendik Bogfjellmo (2021). 
