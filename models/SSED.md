@@ -15,7 +15,7 @@ It is highly recommended to read the master thesis and the original repo for fur
 # Changes
 We have made very few changes to the original repo. 
 
-- Build Dataset script: The original ssed-repo expects the dataset to be manually labeled in Audacity [1]. Since the group were already provided with a labeled dataset and did not have enough time to manually re-label the dataset, we decided to build a script for building the dataset. The script SSED/build_dataset.py will iterate over each 10seconds interval in the audio and build a dataframe by vehicles which are active in the 10second interval. The dataset will use a Sample rate of 16kHz. Checkout SSED/build_dataset.py for details.
+- Build Dataset script: The original ssed-repo expects the dataset to be manually labeled in Audacity [1]. Since the group were already provided with a labeled dataset and did not have enough time to manually re-label the dataset, we decided to build a script for building the dataset. The script SSED/build_dataset.py will iterate over each 10seconds interval in the audio and build a dataframe by vehicles which are active in the 10second interval. The dataset will use a Sample Rate of 16kHz. Checkout SSED/build_dataset.py for details.
 - Configuration: Changed the number of class from 5 to 3 in SSED/configs/defaults.yaml
 - Configuration: Changed the number of classes from 5 to 3 in SSED/classifier/config/defaults.py 
 - Configuration: Changed the train-batch size from 32 to 32//4 = 8. We used a division so we would remember the original-batch size
