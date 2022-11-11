@@ -63,8 +63,6 @@ def split_to_dirs(datapath, audio_path, class_, name_audio, SR=16000):
                 count = str(test_num).zfill(6)
                 sf.write(f"{test_path}{name_audio}_test_{count}.wav", y[onset:offset], SR)  # slice by seconds, seconds in audio = SR * seconds
                 df.to_csv(f"{test_path}{name_audio}_test_{count}.csv")
-                #df.to_csv(f"{test_path}test_1_{voc_class}_{test_num}.csv")
-                #sf.write(f"{test_path}test_1_{voc_class}_{test_num}.wav", y[onset:offset], SR)
                 test_num += 1
         audio_start = audio_end
         audio_end += 10
