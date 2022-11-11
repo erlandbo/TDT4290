@@ -29,7 +29,7 @@ The model has been trained and tested on the following recordings and lidar-data
 - audio_01112022_1.WAV and lidar_data_with_audio_timestamps_nov_01_1.csv
 - audio_01112022_2.WAV and lidar_data_with_audio_timestamps_nov_01_2.csv
 
-The recordings from 21.oktober and 28.october were concidered corrupt because of high pitched noise. 
+The recordings from 21.oktober and 28.october were considered corrupt because of high pitched noise. 
 
 # Build dataset
 
@@ -48,12 +48,13 @@ python build_dataset.py -a ../../data/audio_27092022_2.WAV -d ../../data/lidar_d
 python build_dataset.py -a ../../data/audio_01112022_1.WAV -d ../../data/lidar_data_with_audio_timestamps_nov_01_1.csv 
 python build_dataset.py -a ../../data/audio_01112022_2.WAV -d ../../data/lidar_data_with_audio_timestamps_nov_01_2.csv
 ```
+Note: Building the dataset might take some minutes because the audio-recordings must be loaded.
 
 The command will split the 80% of the dataset to training, 10% of the dataset to validation and 10% of the dataset to testing. 
 
 
 # Train and inference
-You may require significant hardware-resources for training the model. A Nvidia Tesla T4 GPU or similar is sufficient.
+You may require significant hardware-resources for training the model. A Nvidia RTX 3060 12GB or Nvidia Tesla T4 GPU or similar is sufficient.
 
 To train the model:
 ```bash
