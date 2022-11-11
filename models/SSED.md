@@ -33,7 +33,7 @@ Try to reduce the batch-size if you are unable to run the model with the default
 
 # Configurations
 If you want to change the configurations checkout SSED/classifiser/config/defaults.py and SSED/configs/default.yaml
-We have set the number of classes to 3; namely small, medium and large vehicles.
+
 
 # Results
 With the default configurations and hardware requirements, the models should get decent results after approximately 25 epochs.
