@@ -8,41 +8,35 @@ Status: Runs.
 
 ## About
 
-The SSED repository contains a sliding window sound event detection system developed for a master thesis at NTNU IES by Bendik Bogfjellmo. Sound Event Detection systems should utilize a deep learning model to produce an output, formatted as a sound event label, the starting time of the sound event (onset), and the end time of the sound event (offset) [1].
+The SSED repository contains a sliding window sound event detection system developed for a master thesis at NTNU IES by Bendik Bogfjellmo. Sound Event Detection systems should utilize a deep learning model to produce an output, formatted as a sound event label, the starting time of the sound event (onset), and the end time of the sound event (offset) [1]. The models will try to classify vehciles by three classes: small, medium and large. 
 
 It is highly recommended to read the master thesis and the original repo for further details.
 
 # Changes
 We have made very few changes to the original repo. 
 
-- Build Dataset script: The original ssed-repo expects the dataset to be manually labeled in Audacity. Since the group were already provided with a labeled dataset and did not have enough time to manually re-label the dataset, we decided to build a script for building the dataset. The script SSED/build_dataset.py will iterate over each 10seconds interval and build a dataframe by vehicles which are active in the 10second interval. Checkout SSED/build_dataset.py for details.
+- Build Dataset script: The original ssed-repo expects the dataset to be manually labeled in Audacity. Since the group were already provided with a labeled dataset and did not have enough time to manually re-label the dataset, we decided to build a script for building the dataset. The script SSED/build_dataset.py will iterate over each 10seconds interval and build a dataframe by vehicles which are active in the 10second interval. The dataset will use a Sample rate of 16kHz. Checkout SSED/build_dataset.py for details.
 - Configuration: Changed the number of class from 5 to 3 in SSED/configs/defaults.yaml
 - Configuration: Changed the number of classes from 5 to 3 in SSED/classifier/config/defaults.py 
 - Configuration: Changed the train-batch size from 32 to 32//4 = 8. We used a division so we would remember the original-batch size
 - Configuration: Changed the test-batch size from 32 to 32//4 = 8. 
 - Configuration: Changed the dereference kauto_dict dictionary from bird-species to vehicle classes in SSED/classifier/data/dataset/__init__py 
 - Configuration: Changed the dictionary label_dict from bird-species to vehicle classes in SSED/classifier/data/dataset/kauto5cls.py
-The model used for classification can be set in SSED/classifiser/config/defaults.py and SSED/configs/default.yaml. The codebase includes EfficientNet, ResNet34 and ResNet50. EfficientNet is set by default.
 
-# Dataset
-
-The original author of the ssed-repo used a self-described active window"-method in Audacity. The method allows to only annotate parts of an audio file, as long as you label the start of an annotated section of the file with "BEGIN" and the end of the annotated section with "END". So all the data had to be manually labeled in Audacity [1]. Since the group were already provided with labeled datasets and did not have  the time to manually re-label all the events, the group decided to build a script for splitting the audio. The script splits the audio in 10-seconds intervals with a corresponding .csv. The script is available in SSED/build_dataset.py.
 
 # Hardware requirements
 The model has been tested on these Linux systems 
 - Nvidia RTX 3060 12GB VRAM, Intel Core i9-10850K, 32GB RAM, Ubuntu 22.04
 - NVidia Tesla T4, 16 vCPU, 32 GB RAM, Debian 10, Google Cloud
 
-But you might run the model on lower compute power. Try to reduce the batch-size if you are unable to run the model with the default specifications.
+Try to reduce the batch-size if you are unable to run the model with the default specifications.
 
 # Configurations
+If you want to change the configurations checkout SSED/classifiser/config/defaults.py and SSED/configs/default.yaml
 We have set the number of classes to 3; namely small, medium and large vehicles.
 
-Allmost all of the configurations from the bird-classification are kept, except for decreasing the batchsize from 32 to 8 for training and testing. Checkout the the configurations in SSED/classifiser/config/defaults.py and SSED/configs/default.yaml and the master thesis for more details. If you want to change the classification; take a look at classifier/data/datasets/__init__.py and classifier/data/datasets/kauto5cls.py.
-As mentioned in the master thesis, the results are very dependent on the windows-size, number of hops per windows and IoU-treshhold. it is encouraged to experiment with these to improve the results.  But you may want the run more epochs and increase/decrease the batchsize depending on the results. A samling rate of 16kHZ has been set on all audio data
-
 # Results
-With the default configurations and hardware requirements, the models should get decent results after approximately 25 epochs. The master thesis used 5740 sound events annotated from 450 hours of audio [1]. This is significantly more than our total amount of hours of recording of vehicles (approximately 11-12 hours and 2500-3000 vehicles).
+With the default configurations and hardware requirements, the models should get decent results after approximately 25 epochs.
 
 After some epochs with training the codebase should achieve a high AP (approximately 0.8-0.95 AP) for both medium and large vehilces while the AP for small vehicles varies between 0.1-0.7 depending on the dataset used. The total MAP will thus be affected by the difficulties with small vehicles and thus be somewhere between 0.6-0.9 depending on the dataset and difficulties with small vehicles. There might be some imbalance in the dataset and resampling by adding more examples of small-vehicles has often given better results for small vehicles. Checkout the master-thesis for details regarding MAP.
 
