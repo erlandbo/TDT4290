@@ -12,7 +12,7 @@ The SSED repository contains a sliding window sound event detection system devel
 
 It is highly recommended to read the master thesis and the original repo for further details.
 # Note
-We have not tested the model thoroughly so there might be some bugs in the codebase. 
+We have not tested the model thoroughly so there might be some bugs in the codebase. But we are not aware of any bugs.
 
 # Changes
 We have made very few changes to the original repo. 
