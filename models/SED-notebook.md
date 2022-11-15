@@ -1,4 +1,4 @@
-# Model: FDY-CRNN
+# Model: SED-Notebook
 
 Source: [Kaggle-link](https://www.kaggle.com/code/hidehisaarai1213/introduction-to-sound-event-detection).
 
