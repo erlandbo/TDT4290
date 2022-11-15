@@ -4,7 +4,7 @@ Source: [GitHub-link](https://github.com/bendikbo/SSED).
 
 Master Thesis: [Thesis](https://github.com/bendikbo/SSED/blob/main/thesis.pdf).
 
-Status: Runs.
+Status: Runs. But not tested thoroughly.
 
 ## About
 
