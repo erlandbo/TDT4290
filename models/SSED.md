@@ -11,6 +11,8 @@ Status: Runs.
 The SSED repository contains a sliding window sound event detection system developed for a master thesis at NTNU IES by Bendik Bogfjellmo. Sound Event Detection systems should utilize a deep learning model to produce an output, formatted as a sound event label, the starting time of the sound event (onset), and the end time of the sound event (offset) [1]. The models will try to classify vehciles by three classes: small, medium and large. 
 
 It is highly recommended to read the master thesis and the original repo for further details.
+# Note
+We have not tested the model thoroughly so there might be some bugs in the codebase. 
 
 # Changes
 We have made very few changes to the original repo. 
