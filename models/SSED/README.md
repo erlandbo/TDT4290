@@ -4,6 +4,9 @@ Source: [GitHub-link](https://github.com/bendikbo/SSED).
 
 Master Thesis: [Thesis](https://github.com/bendikbo/SSED/blob/main/thesis.pdf).
 
+# Note
+We have not tested the model thoroughly, so there might be some bugs in the code.
+
 # Install dependencies
 
 (Recommended) use pip.
