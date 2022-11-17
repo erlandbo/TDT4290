@@ -27,7 +27,7 @@ If we include the time it takes for a car to pass the sensor the model is able t
 Several different approaches were tried to estimate the duration but none were successful. 
 
 ## Files
-
+Recommended to use pip.
 ### Pre-processing of data 
 Pre-processing of the audio and lidar data is done in [create_data.ipynb](create_data.ipynb).
 This notebook uses lidar data and audio 
