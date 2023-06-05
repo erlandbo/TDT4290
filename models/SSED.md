@@ -4,15 +4,13 @@ Source: [GitHub-link](https://github.com/bendikbo/SSED).
 
 Master Thesis: [Thesis](https://github.com/bendikbo/SSED/blob/main/thesis.pdf).
 
-Status: Runs. But not tested thoroughly.
+Status: Runs.
 
 ## About
 
 The SSED repository contains a sliding window sound event detection system developed for a master thesis at NTNU IES by Bendik Bogfjellmo. Sound Event Detection systems should utilize a deep learning model to produce an output, formatted as a sound event label, the starting time of the sound event (onset), and the end time of the sound event (offset) [1]. The models will try to classify vehciles by three classes: small, medium and large. 
 
 It is highly recommended to read the master thesis and the original repo for further details.
-# Note
-We have not tested the model thoroughly so there might be some bugs in the codebase. But we are not aware of any bugs.
 
 # Changes
 We have made very few changes to the original repo. 
@@ -20,8 +18,6 @@ We have made very few changes to the original repo.
 - Build Dataset script: The original ssed-repo expects the dataset to be manually labeled in Audacity [1]. Since the group were already provided with a labeled dataset and did not have enough time to manually re-label the dataset, we decided to build a script for building the dataset. The script will build the dataset by slicing the audio in 10seconds WAV-files with a corresponding csv-file. The script SSED/build_dataset.py will iterate over each 10seconds interval in the audio and build a dataframe of vehicles which are active in the 10 second interval. 80% of the audio will be used for training, 10% for validation and 10% for testing. The dataset will use a Sample Rate of 16kHz. Checkout SSED/build_dataset.py for details.
 - Configuration: Changed the number of class from 5 to 3 in SSED/configs/defaults.yaml
 - Configuration: Changed the number of classes from 5 to 3 in SSED/classifier/config/defaults.py 
-- Configuration: Changed the train-batch size from 32 to 32//4 = 8. We used a division so we would remember the original-batch size
-- Configuration: Changed the test-batch size from 32 to 32//4 = 8. 
 - Configuration: Changed the dereference kauto_dict dictionary from bird-species to vehicle classes in SSED/classifier/data/dataset/__init__.py 
 - Configuration: Changed the dictionary label_dict from bird-species to vehicle classes in SSED/classifier/data/dataset/kauto5cls.py
 
