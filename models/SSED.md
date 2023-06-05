@@ -15,7 +15,7 @@ It is highly recommended to read the master thesis and the original repo for fur
 # Changes
 We have made very few changes to the original repo. 
 
-- Build Dataset script: The original ssed-repo expects the dataset to be manually labeled in Audacity [1]. Since the group were already provided with a labeled dataset and did not have enough time to manually re-label the dataset, we decided to build a script for building the dataset. The script will build the dataset by slicing the audio in 10seconds WAV-files with a corresponding csv-file. The script SSED/build_dataset.py will iterate over each 10seconds interval in the audio and build a dataframe of vehicles which are active in the 10 second interval. 80% of the audio will be used for training, 10% for validation and 10% for testing. The dataset will use a Sample Rate of 16kHz. Checkout SSED/build_dataset.py for details.
+- Build Dataset script: The original ssed-repo expects the dataset to be manually labeled in Audacity [1]. Since the group were already provided with a labeled dataset and did not have enough time to manually re-label the dataset, we decided to build a script for building the dataset. The script will build the dataset by slicing the audio in 10seconds WAV-files with a corresponding csv-file. The script SSED/build_dataset.py will iterate over each 10seconds interval in the audio and build a dataframe of vehicles which are active in the 10 second interval. 80% of the audio will be used for training, 10% for validation and 10% for testing. The dataset will use a sample-rate of 16kHz. Checkout SSED/build_dataset.py for details.
 - Configuration: Changed the number of class from 5 to 3 in SSED/configs/defaults.yaml
 - Configuration: Changed the number of classes from 5 to 3 in SSED/classifier/config/defaults.py 
 - Configuration: Changed the dereference kauto_dict dictionary from bird-species to vehicle classes in SSED/classifier/data/dataset/__init__.py 
@@ -24,10 +24,10 @@ We have made very few changes to the original repo.
 
 # Hardware requirements
 The model has been tested on these Linux systems 
-- Nvidia RTX 3060 12GB VRAM, Intel Core i9-10850K, 32GB RAM, Ubuntu 22.04
+- Nvidia RTX3060 12GB VRAM, Intel Core i9-10850K, Patriot Viper 4400Hz DDR4 4x8GB RAM, Ubuntu 22.04
 - NVidia Tesla T4, 16 vCPU, 32 GB RAM, Debian 10, Google Cloud
 
-Try to reduce the batch-size if you are unable to run the model with the default specifications.
+Try to reduce the batch size if you are unable to run the model with the default specifications.
 
 # Configurations
 If you want to change the configurations checkout SSED/classifiser/config/defaults.py and SSED/configs/default.yaml
